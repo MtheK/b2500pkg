@@ -27,3 +27,12 @@ homeassistant:
 - `main` bleibt synchron zu upstream
 - Sync & Rebase bei Änderungen im upstream
 
+Workflow:
+1. Änderungen in `MK_ext` => commit
+2. `git fetch upstream`
+3. `git checkout main`
+4. `git merge upstream/main` oder `git reset --hard upstream/main`
+5. `git checkout MK_ext`
+6. `git rebase main`
+7. ggf. mergen und dann `git rebase --continue`
+8. `git push --force-with-lease`

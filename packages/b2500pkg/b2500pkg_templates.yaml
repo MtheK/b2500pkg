@@ -685,3 +685,38 @@ template:
         
         
   
+  - trigger:
+      - platform: state
+        entity_id: sensor.b2500_01_pe
+        to: "100"
+    sensor:
+      - name: "B01 LastTime Full"
+        device_class: timestamp
+        state: "{{ now() }}"
+
+  - trigger:
+      - platform: state
+        entity_id: sensor.b2500_02_pe
+        to: "100"
+    sensor:
+      - name: "B02 LastTime Full"
+        device_class: timestamp
+        state: "{{ now() }}"
+        
+  - trigger:
+      - platform: state
+        entity_id: sensor.b2500_01_pe
+        to: "0"
+    sensor:
+      - name: "B01 LastTime Empty"
+        device_class: timestamp
+        state: "{{ now() }}"
+
+  - trigger:
+      - platform: state
+        entity_id: sensor.b2500_02_pe
+        to: "0"
+    sensor:
+      - name: "B02 LastTime Empty"
+        device_class: timestamp
+        state: "{{ now() }}"
