@@ -36,3 +36,7 @@ Workflow:
 6. `git rebase main`
 7. ggf. mergen und dann `git rebase --continue`
 8. `git push --force-with-lease`
+
+## diverses
+- `basicsystem.sh` wird bei Update nicht automatisch aktualisiert
+
