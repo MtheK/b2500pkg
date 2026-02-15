@@ -34,7 +34,7 @@ automation:
     - action: notify.persistent_notification
       metadata: {}
       data:
-        message: "Update gestartet ({{ states('input_text.b2500pkg_repo') }})"
+        message: "Update3 gestartet ({{ 'MtheK/b2500pkg/MK_ext' if states('input_text.b2500pkg_repo') == 'unknown' else states('input_text.b2500pkg_repo') }})"
         title: B2500PKG
     - data:
         command: >-
