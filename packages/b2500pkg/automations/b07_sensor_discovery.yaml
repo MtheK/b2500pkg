@@ -1286,9 +1286,6 @@ automation:
               {% raw %} {
                 "name": "B07 IT Tägliche abgegebene Leistung",
                 "state_topic": "B2500PKG/B2500_07/CD01",
-                "state_class": "total_increasing",
-                "device_class": "energy",
-                "unit_of_measurement": "Wh",
                 "value_template": "{{ value.split('it=')[1].split(',')[0] }}",
                 "default_entity_id": "sensor.b2500_07_it",
                 "unique_id": "b2500_07_it",
