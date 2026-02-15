@@ -11,9 +11,21 @@ views:
             grid_options:
               columns: 12
               rows: 1
+          - type: heading
+            heading_style: title
+            heading: 'MtheK Update 2025-12-14 (Visibility Bugfixes)'
+            grid_options:
+              columns: 12
+              rows: 1
           - type: picture
             image: >-
               https://raw.githubusercontent.com/Martin0475/b2500pkg/refs/heads/main/B2500PKG_Logo.jpg
+          - type: entities
+            entities:
+              - entity: input_text.b2500pkg_repo
+              - entity: input_button.b2500pkg_update
+            show_header_toggle: false
+            title: B2500pkg Update
           - type: tile
             entity: input_button.b2500pkg_update
             features_position: bottom
@@ -1033,6 +1045,7 @@ views:
                   - entity: sensor.b2500_01_pt
                   - entity: sensor.b2500_01_bc
                   - entity: sensor.b2500_01_bs
+                  - entity: sensor.b2500_01_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1089,6 +1102,7 @@ views:
                   - entity: sensor.b2500_02_pt
                   - entity: sensor.b2500_02_bc
                   - entity: sensor.b2500_02_bs
+                  - entity: sensor.b2500_02_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1145,6 +1159,7 @@ views:
                   - entity: sensor.b2500_03_pt
                   - entity: sensor.b2500_03_bc
                   - entity: sensor.b2500_03_bs
+                  - entity: sensor.b2500_03_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1201,6 +1216,7 @@ views:
                   - entity: sensor.b2500_04_pt
                   - entity: sensor.b2500_04_bc
                   - entity: sensor.b2500_04_bs
+                  - entity: sensor.b2500_04_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1257,6 +1273,7 @@ views:
                   - entity: sensor.b2500_05_pt
                   - entity: sensor.b2500_05_bc
                   - entity: sensor.b2500_05_bs
+                  - entity: sensor.b2500_05_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1313,6 +1330,7 @@ views:
                   - entity: sensor.b2500_06_pt
                   - entity: sensor.b2500_06_bc
                   - entity: sensor.b2500_06_bs
+                  - entity: sensor.b2500_06_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1369,6 +1387,7 @@ views:
                   - entity: sensor.b2500_07_pt
                   - entity: sensor.b2500_07_bc
                   - entity: sensor.b2500_07_bs
+                  - entity: sensor.b2500_07_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1425,6 +1444,7 @@ views:
                   - entity: sensor.b2500_08_pt
                   - entity: sensor.b2500_08_bc
                   - entity: sensor.b2500_08_bs
+                  - entity: sensor.b2500_08_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1481,6 +1501,7 @@ views:
                   - entity: sensor.b2500_09_pt
                   - entity: sensor.b2500_09_bc
                   - entity: sensor.b2500_09_bs
+                  - entity: sensor.b2500_09_it
                 show_header_toggle: false
                 title: Statistikdaten
               - type: entities
@@ -1511,10 +1532,10 @@ views:
                 entity: input_text.b09_mac
                 state_not: '0'
         column_span: 4
-      - type: grid
-        cards:
-          - type: heading
-            heading: Neuer Abschnitt
+#      - type: grid
+#        cards:
+#          - type: heading
+#            heading: Neuer Abschnitt
     cards: []
   - type: sections
     max_columns: 4
@@ -1773,24 +1794,40 @@ views:
                 secondary_info: last-updated
               - entity: sensor.b2500_01_do
             show_header_toggle: false
+            visibility:
+              - condition: state
+                entity: input_text.b01_mac
+                state_not: '0'
           - type: entities
             entities:
               - entity: sensor.b02_min_spannung
                 secondary_info: last-updated
               - entity: sensor.b2500_02_do
             show_header_toggle: false
+            visibility:
+              - condition: state
+                entity: input_text.b02_mac
+                state_not: '0'
           - type: entities
             entities:
               - entity: sensor.b03_min_spannung
                 secondary_info: last-updated
               - entity: sensor.b2500_03_do
             show_header_toggle: false
+            visibility:
+              - condition: state
+                entity: input_text.b03_mac
+                state_not: '0'
           - type: entities
             entities:
               - entity: sensor.b04_min_spannung
                 secondary_info: last-updated
               - entity: sensor.b2500_04_do
             show_header_toggle: false
+            visibility:
+              - condition: state
+                entity: input_text.b04_mac
+                state_not: '0'
           - type: entities
             entities:
               - entity: input_number.lvp_voltage_cutoff
@@ -2229,6 +2266,10 @@ views:
             min_y_axis: 0
             max_y_axis: 100
         column_span: 1
+        visibility:
+          - condition: state
+            entity: input_text.b01_mac
+            state_not: '0'
       - type: grid
         cards:
           - type: heading
@@ -2264,6 +2305,10 @@ views:
               - entity: sensor.b02_spannungsdifferenz
             min_y_axis: 0
             max_y_axis: 100
+        visibility:
+          - condition: state
+            entity: input_text.b02_mac
+            state_not: '0'
       - type: grid
         cards:
           - type: heading
@@ -2299,6 +2344,10 @@ views:
               - entity: sensor.b03_spannungsdifferenz
             min_y_axis: 0
             max_y_axis: 100
+        visibility:
+          - condition: state
+            entity: input_text.b03_mac
+            state_not: '0'
       - type: grid
         cards:
           - type: heading
@@ -2334,6 +2383,10 @@ views:
               - entity: sensor.b04_spannungsdifferenz
             min_y_axis: 0
             max_y_axis: 100
+        visibility:
+          - condition: state
+            entity: input_text.b04_mac
+            state_not: '0'
   - grid:
       columns: 5
       rows: 5
@@ -2570,7 +2623,7 @@ views:
                     name: OUT1
               - type: entities
                 entities:
-                  - entity: sensor.b2500_01_cd16i2
+                  - entity: sensor.b2500_03_cd16i2
                     name: OUT2
                   - entity: sensor.b2500_03_cd16c4
                     name: OUT2
@@ -2651,7 +2704,7 @@ views:
             entity: input_boolean.req_cd16
             state: 'on'
           - condition: state
-            entity: input_text.b04_mac_mac
+            entity: input_text.b04_mac
             state_not: '0'
       - square: false
         type: grid

@@ -1289,6 +1289,9 @@ automation:
                 "value_template": "{{ value.split('it=')[1].split(',')[0] }}",
                 "default_entity_id": "sensor.b2500_03_it",
                 "unique_id": "b2500_03_it",
+                "state_class": "total_increasing",
+                "device_class": "energy",
+                "unit_of_measurement": "Wh",
                 "entity_category": "diagnostic"
               } {% endraw %}
           action: mqtt.publish
