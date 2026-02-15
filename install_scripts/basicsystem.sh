@@ -1,3 +1,18 @@
+#!/bin/bash
+
+# Configurable GitHub repository and branch
+# Can be overridden by environment variables:
+#   export GH_USER="your-user"
+#   export GH_REPO="your-repo"
+#   export GH_BRANCH="your-branch"
+#GH_USER="${GH_USER:-Martin0475}"
+#GH_USER="${GH_USER:-MtheK}"
+#GH_REPO="${GH_REPO:-b2500pkg}"
+#GH_BRANCH="${GH_BRANCH:-MK_ext}"
+
+# Parameter 1 oder default:Martin0475/b2500pkg/main
+RAW_BASE="https://raw.githubusercontent.com/${1:-Martin0475/b2500pkg/main}"
+
 # Befehle hier einfügen
 mkdir /config/packages/b2500pkg
 mkdir /config/packages/b2500pkg/automations

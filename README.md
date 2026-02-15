@@ -21,4 +21,9 @@ homeassistant:
 4. Starte Home Assistant neu.
 5. Nach dem Neustart sollte ein Button namens `B2500PKG Update starten` verfügbar sein.
    Hiermit kann die aktuelle Version heruntergeladen werden.
-6.
+
+## Dev Notes
+- Erweiterungen zu Martin0475 in Branch `MK_ext`
+- `main` bleibt synchron zu upstream
+- Sync & Rebase bei Änderungen im upstream
+

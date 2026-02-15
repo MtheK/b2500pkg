@@ -1,4 +1,7 @@
 input_text:
+  b2500pkg_repo:
+    name: Repository und Branch
+    initial: MtheK/b2500pkg/MK_ext
 
 input_select:
   speicherauswahl:
