@@ -11,7 +11,12 @@
 #GH_BRANCH="${GH_BRANCH:-MK_ext}"
 
 # Parameter 1 oder default:Martin0475/b2500pkg/main
-RAW_BASE="https://raw.githubusercontent.com/${1:-MtheK/b2500pkg/MK_ext}"
+#RAW_BASE="https://raw.githubusercontent.com/${1:-MtheK/b2500pkg/MK_ext}"
+repo="${1:-MtheK/b2500pkg/MK_ext}"
+if [[ "$repo" == "unknown" ]]; then
+    repo="MtheK/b2500pkg/MK_ext"
+fi
+RAW_BASE="https://raw.githubusercontent.com/${repo}"
 
 # Befehle hier einfügen
 mkdir /config/packages/b2500pkg

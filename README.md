@@ -38,5 +38,5 @@ Workflow:
 8. `git push --force-with-lease`
 
 ## diverses
-- `basicsystem.sh` wird bei Update nicht automatisch aktualisiert
+- `b2500pkg_update.yaml` wird bei Update nicht automatisch aktualisiert!
 

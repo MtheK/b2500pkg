@@ -34,13 +34,13 @@ automation:
     - action: notify.persistent_notification
       metadata: {}
       data:
-        message: Update gestartet
+        message: "Update gestartet ({{ states('input_text.b2500pkg_repo') }})"
         title: B2500PKG
     - data:
         command: >-
           wget -q -O /config/packages/b2500pkg/basicsystem.sh
-          https://raw.githubusercontent.com/Martin0475/b2500pkg/main/install_scripts/basicsystem.sh &&
-          sh /config/packages/b2500pkg/basicsystem.sh
+          https://raw.githubusercontent.com/{{ 'MtheK/b2500pkg/MK_ext' if states('input_text.b2500pkg_repo') == 'unknown' else states('input_text.b2500pkg_repo') }}/install_scripts/basicsystem.sh &&
+          sh /config/packages/b2500pkg/basicsystem.sh {{ states('input_text.b2500pkg_repo') }}
       action: shell_command.run_custom_command
     - action: notify.persistent_notification
       metadata: {}
